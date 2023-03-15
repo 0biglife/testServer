@@ -30,9 +30,9 @@ export class UserController {
 
   @Post()
   async createUser(@Body() createUserDto: CreateUserDto): Promise<User> {
-    // this.logger.verbose(`${UserController.name} - createUser - controller`);
-    // this.logger.verbose(`${createUserDto} - createUser - body`);
-    // this.logger.verbose(`${JSON.stringify(createUserDto)} - createUser - body`);
+    this.logger.verbose(`${UserController.name} - createUser - controller`);
+    this.logger.verbose(`${createUserDto} - createUser - body`);
+    this.logger.verbose(`${JSON.stringify(createUserDto)} - createUser - body`);
     return this.userService.createUser(createUserDto.email, createUserDto.name);
   }
 
